@@ -99,7 +99,7 @@ mysqli_close($link);
 
                                             </div>
                                     
-                                            <input type="submit" class="btnRegister" name="register" onclick="location.href='login.php'" value="Register"/>
+                                            <input type="submit" class="btnRegister" name="register" onclick="location.href='signup.html'" value="Register"/>
                                     </div>
                                 </div>
                             </div>

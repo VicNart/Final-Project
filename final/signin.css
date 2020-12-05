@@ -1,0 +1,65 @@
+:root{
+    background-image: url("/images/Vihama.jpg");  
+}
+
+.login-container{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 32%;
+    margin-right: 32%;
+    position: fixed;
+}
+
+
+.login-form-2{
+    padding: 5%;
+    background: #5d82aa;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.95;
+}
+.login-form-2 h3{
+    text-align: center;
+    color: rgb(3, 3, 3);
+    font-weight: bold;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+
+.login-form-2 .btnSubmit{
+    font-weight: bold;
+    color: #0062cc;
+    background-color: #fff;
+}
+.login-form-2 .Signup{
+    color: yellow;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#SignUp{
+    color: black;
+    font-weight: 600;
+}
+
+#span1{
+    color: #fff;
+}
+
+#LogIn{
+    color: black;
+    font-weight: 600;
+}
+
+#Home{
+    color: black;
+    font-weight: 500;
+}
