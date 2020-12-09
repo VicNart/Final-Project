@@ -47,10 +47,20 @@
             <li class="nav-item">
               <a class="nav-link" href="/contact.html">Contact</a>
             </li>
+            <li>
+              <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+                <div class="row">
+                    <div class="col">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+                </div>
+              </nav>
+            </li>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+  
 
   <!-- Page Content -->
   <div class="container">
@@ -107,19 +117,19 @@
           </a>
         </div>-->
 
-        <div class="row">
+        <div class="row" >
 
-          <div class="col-lg-4 col-md-6 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4" >
             <div class="card h-100">
               <a href="#"><img class="card-img-top" src="/images/Gasoline.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Gasoline</a>
                 </h4>
-                <h5>$24.99</h5>
+                <h5>$2.40</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
-              <p><button>Add to Cart</button></p>
+              <p><button data-price = "2.4" data-name = "Gasoline" class="add-to-cart btn btn-primary">Add to Cart</button></p>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
@@ -133,10 +143,10 @@
                 <h4 class="card-title">
                   <a href="#">Gasoil</a>
                 </h4>
-                <h5>$24.99</h5>
+                <h5>$2</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
               </div>
-              <p><button>Add to Cart</button></p>
+              <p><button data-price = "2" data-name = "gasoil" class="add-to-cart btn btn-primary">Add to Cart</button></p>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
@@ -150,10 +160,10 @@
                 <h4 class="card-title">
                   <a href="#">Premix</a>
                 </h4>
-                <h5>$24.99</h5>
+                <h5>$2.20</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
-              <p><button>Add to Cart</button></p>
+              <p><button data-price = "2.2" data-name = "premix" class="add-to-cart btn btn-primary">Add to Cart</button></p>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
@@ -167,10 +177,10 @@
                 <h4 class="card-title">
                   <a href="#">Jet Fuel</a>
                 </h4>
-                <h5>$24.99</h5>
+                <h5>$1.08</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
-              <p><button>Add to Cart</button></p>
+              <p><button data-price = "1.08" data-name = "jet fuel" class="add-to-cart btn btn-primary">Add to Cart</button></p>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
@@ -184,15 +194,17 @@
                 <h4 class="card-title">
                   <a href="#">Kerosene</a>
                 </h4>
-                <h5>$24.99</h5>
+                <h5>$0.89</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
               </div>
-              <p><button>Add to Cart</button></p>
+              <p><button data-price = "0.89" data-name = "kerosene" class="add-to-cart btn btn-primary">Add to Cart</button></p>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
             </div>
           </div>
+
+          
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
@@ -201,10 +213,10 @@
                 <h4 class="card-title">
                   <a href="#">Cracked Fuel Oil</a>
                 </h4>
-                <h5>$24.99</h5>
+                <h5>$1.50</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
-              <p><button>Add to Cart</button></p>
+              <p><button data-price = "1.50" data-name = "cracked fuel oil" class="add-to-cart btn btn-primary">Add to Cart</button></p>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
@@ -212,6 +224,7 @@
           </div>
 
         </div>
+
         <!-- /.row -->
 
       </div>
@@ -222,40 +235,34 @@
 
   </div>
   <!-- /.container -->
+  <!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="show-cart table">
+          
+        </table>
+        <div>Total price: $<span class="total-cart"></span></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Order now</button>
+      </div>
+    </div>
+  </div>
+</div> 
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
 
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="/index.html">Vihama</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            
-            <li class="nav-item">
-              <a class="nav-link" href="/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/post.html">Sample Post</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="/products.html">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact.html">Contact</a>
-            </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
     </div>
@@ -265,6 +272,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="/shop/script.js"></script>
 
 </body>
 

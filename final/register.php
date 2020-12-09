@@ -1,10 +1,10 @@
 <?php
 $servername ="localhost";
 $username = "root";
-$password = "8dCtHDCExA9N";
-$dbname = "gd2022";
+$password = "";
+$dbname = "von12672022";
 
-$link = mysqli_connect("$servername", "$username", "8dCtHDCExA9N", "$dbname");
+$link = mysqli_connect("$servername", "$username", "$password", "$dbname");
  
 // Check connection
 if($link === false){
@@ -13,19 +13,19 @@ if($link === false){
 
 if(isset($_POST['register'])) {
     $firstname = $_POST["fname"];
-    $middlename =  $_POST["midname"];
     $lastname = $_POST["lname"];
-    $email =  $_POST["email"];
+    $email = $_POST["email"];
+    $phone =  $_POST["phone"];
     $password = md5($_POST["pass1"]);
     $confirmpass = md5($_POST["pass2"]);
-    $gender = $_POST["gender"];
+    
 
      
         if ($password == $confirmpass){
             
-            $sql = "INSERT INTO signup(adminid, email, password, fname, mname, lname, gender) VALUES ('109092020', '$email', '$password','$firstname', '$middlename','$lastname', '$gender')";
+            $sql = "INSERT INTO customer(Fname, Lname, email, Phone, passwordd) VALUES ('$firstname','$lastname', '$email', '$phone', '$password')";
             if(mysqli_query($link, $sql)){
-                header('Location: login.php');
+                header('Location: signin.php');
             } else{
                 echo "ERROR: Could not execute $sql. " . mysqli_error($link);
             }
@@ -70,7 +70,11 @@ mysqli_close($link);
                                             <div class="form-group">
                                                 <input type="text" name="lname" class="form-control" placeholder="Last Name" value="" />
                                             </div>
+
                                             <div class="form-group">
+                                                <input type="email" name="email" class="form-control" placeholder="Email" value="" />
+                                            </div>
+                                            <!--<div class="form-group">
                                                 <div class="maxl">
                                                     <label class="radio inline"> 
                                                         <input type="radio" name="gender" value="Male" checked>
@@ -81,7 +85,7 @@ mysqli_close($link);
                                                         <span>Female </span> 
                                                     </label>
                                                 </div>
-                                            </div>
+                                            </div>-->
 
                                         </div>
 
@@ -99,7 +103,7 @@ mysqli_close($link);
 
                                             </div>
                                     
-                                            <input type="submit" class="btnRegister" name="register" onclick="location.href='signup.html'" value="Register"/>
+                                            <input type="submit" class="btnRegister" name="register" onclick="location.href='signin.php'" value="Register"/>
                                     </div>
                                 </div>
                             </div>

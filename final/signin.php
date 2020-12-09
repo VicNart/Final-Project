@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +14,12 @@
 <div class="container login-container">
     <div class="row">
         <div class="col-md-6 login-form-2">
-            <h3>Sign In</h3>
+            <h3>Login</h3>
             
             <form method ="POST">
                 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email" placeholder="Your Email" value="" />
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" value="" />
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" name="pass1" placeholder="Your Password" value="" />
@@ -30,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <span id="span1">Don't have an account?</span>
-                    <a href="signup.php" id = "SignUp" class="SignUp" value="Signup">Sign Up</a>
+                    <a href="register.php" id = "SignUp" class="SignUp" value="Signup">Sign Up</a>
                 </div>
                 <div class="form-group">
                     <span id="span1">Admin Login</span>
@@ -53,10 +52,10 @@
 
 $servername ="localhost";
 $username = "root";
-$password = "8dCtHDCExA9N";
-$dbname = "gd2022";
+$password = "";
+$dbname = "von12672022";
 
-$link = mysqli_connect("$servername", "$username", "8dCtHDCExA9N", "$dbname");
+$link = mysqli_connect("$servername", "$username", "$password", "$dbname");
 $mail = $_POST['email'];
 $pas = $_POST['pass1'];
  
@@ -68,7 +67,7 @@ if($link === false){
 
 
 //selecting query
-$sql = "Select * from students where email ='$mail'";
+$sql = "Select * from customer where email ='$mail'";
 $result = mysqli_query($link,$sql);
 
 
@@ -78,7 +77,7 @@ if ( !isset($mail, $pas) ) {
 	exit('Please fill both the email and password fields!');
 }
 
-if ($stmt = $link->prepare('SELECT sid, password FROM signup WHERE email = ?')) {
+if ($stmt = $link->prepare('SELECT CUSTOMER_ID, passwordd FROM customer WHERE email = ?')) {
 	// Bind parameters 
 	$stmt->bind_param('s', $_POST['email']);
 	$stmt->execute();
@@ -128,3 +127,4 @@ if ($stmt = $link->prepare('SELECT sid, password FROM signup WHERE email = ?')) 
 mysqli_close($link);
 
 ?>
+

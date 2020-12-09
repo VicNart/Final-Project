@@ -1,5 +1,5 @@
 :root{
-    background-image: url("/images/Vihama.jpg");  
+    background-image: url("images/Vihama.jpeg");  
 }
 
 .login-container{
@@ -13,14 +13,12 @@
 
 .login-form-2{
     padding: 5%;
-    background: #5d82aa;
+    background: #0062cc;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-    opacity: 0.95;
 }
 .login-form-2 h3{
     text-align: center;
-    color: rgb(3, 3, 3);
-    font-weight: bold;
+    color: #fff;
 }
 .login-container form{
     padding: 10%;
@@ -35,9 +33,10 @@
 }
 
 .login-form-2 .btnSubmit{
-    font-weight: bold;
+    font-weight: 600;
     color: #0062cc;
     background-color: #fff;
+    opacity: 1.0;
 }
 .login-form-2 .Signup{
     color: yellow;
@@ -47,7 +46,6 @@
 
 #SignUp{
     color: black;
-    font-weight: 600;
 }
 
 #span1{
@@ -56,10 +54,8 @@
 
 #LogIn{
     color: black;
-    font-weight: 600;
 }
 
 #Home{
     color: black;
-    font-weight: 500;
 }
