@@ -1,4 +1,5 @@
 <?php
+
 $servername ="localhost";
 $username = "root";
 $password = "";
@@ -23,7 +24,7 @@ if(isset($_POST['register'])) {
      
         if ($password == $confirmpass){
             
-            $sql = "INSERT INTO customer(Fname, Lname, email, Phone, passwordd) VALUES ('$firstname','$lastname', '$email', '$phone', '$password')";
+            $sql = "INSERT INTO customer(Fname, Lname, email, Phone, password) VALUES ('$firstname','$lastname', '$email', '$phone', '$password')";
             if(mysqli_query($link, $sql)){
                 header('Location: signin.php');
             } else{
@@ -56,7 +57,7 @@ mysqli_close($link);
                         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
 
                         </ul>
-                        <form method = "POST">
+                        <form action="signup.php" method = "POST">
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                     <h3 class="register-heading">Register</h3>
@@ -102,8 +103,12 @@ mysqli_close($link);
                                                 </div>
 
                                             </div>
+                                            <div class="form-group">
+                                                <span id="span1">Already have an account? Login here:</span>
+                                                <a href="signin.php" id = "SignIn" class="SignIn" value="Signup">Sign Up</a>
+                                            </div>
                                     
-                                            <input type="submit" class="btnRegister" name="register" onclick="location.href='signin.php'" value="Register"/>
+                                            <input type="submit" class="btnRegister" name="register"  value="Register"/>
                                     </div>
                                 </div>
                             </div>
@@ -112,4 +117,3 @@ mysqli_close($link);
                 </div>
         </div>
 </div>
-        

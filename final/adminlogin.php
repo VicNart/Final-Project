@@ -28,12 +28,8 @@
                     <input type="submit" name="login_btn" class="btnSubmit" value="Login" />
                 </div>
                 <div class="form-group">
-                    <span id="span1">Don't have an account?</span>
-                    <a href="signup.php" id = "SignUp" class="SignUp" value="Signup">Sign Up</a>
-                </div>
-                <div class="form-group">
-                    <span id="span1">Admin Login</span>
-                    <a href="adminlogin.php" id = "LogIn" class="LogIn" value="LogIn">here</a>
+                    <span id="span1">Not an Admin signup as customer here:</span>
+                    <a href="register.php" id = "SignUp" class="SignUp" value="Signup">Sign Up</a>
                 </div>
                 <div class="form-group">
                     <span><a href="index.html" id = "Home" class="Home" value="Home">Home</a></span>
