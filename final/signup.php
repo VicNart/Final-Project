@@ -12,30 +12,25 @@ $db = $database-> getConnection();
  
 $user = new customer($db);
 $errorPassword = "Passwords do not match";
-$errorUsername = "Username is not available";
 $errorEmail = "Email is not available";
  
 // set user property values
-$user->Fname = $_POST['fname'];
-$user->Lname = $_POST['lname'];
-$user->Phone = $_POST['phone'];
+$user->fname = $_POST['fname'];
+$user->lname = $_POST['lname'];
+$user->phone = $_POST['phone'];
 $user->email = $_POST['email'];
-$user->pass1 = base64_encode($_POST['pass1']);
-$user->cpass2 = base64_encode($_POST['pass2']);
+$user->password = base64_encode($_POST['password']);
+$user->cpassword = base64_encode($_POST['confirmpassword']);
 $user->role = "1";
 
  
 // create the user
 if($user->signup()){
-    header("Location:index.php");
+    header("Location:loginPage.php");
     }
 else{
     if($user->errPass){
         $_SESSION["error"] = $errorPassword;
-        header("location: register.php");
-    }
-    if($user->errUser){
-        $_SESSION["error"] = $errorUsername;
         header("location: register.php");
     }
     if($user->errEmail){
@@ -44,5 +39,5 @@ else{
     }
 }
 
-
+print_r(json_encode($user_arr));
 ?>

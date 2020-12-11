@@ -16,30 +16,30 @@ $errorlogin = "Incorrect Login credentials";
 
 //Set variables
 $user->login = isset($_POST['email']) ? $_POST['email'] : die('error');
-$user->password = base64_encode(isset($_POST['pass1']) ? $_POST['pass1'] : die('error'));
+$user->password = base64_encode(isset($_POST['password']) ? $_POST['password'] : die('error'));
 
 $stmt = $user->login();
 if($stmt->rowCount() > 0){
     // get retrieved row
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     session_start();    
-    $_SESSION['Fname'] = $row['fname'];
-    $_SESSION['userID'] = $row['UserID'];
+    $_SESSION['fname'] = $row['fname'];
+    $_SESSION['CUSTOMER_ID'] = $row['CUSTOMER_ID'];
     $_SESSION['role'] = $row['role'];
 
     
     if($row['role'] == 1){
-        header("Location:index.html");
+        header("Location: index.html");
     }
     if($row['role'] == 0){
-        header('Location: /shop/shop.html');
+        header('Location: post.html');
     }
     
 }
 else{
     session_start();
     $_SESSION["error"] = $errorlogin;
-    header("location: post.html");
+    header("location: products.html");
 }
 
 ?>
